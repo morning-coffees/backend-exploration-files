@@ -46,5 +46,52 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+<profiles>
+  <!-- Other profiles -->
+  <profile>
+    <id>default</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <build>
+      <plugins>
+        <plugin>
+          <!-- Configure the Maven Surefire Plugin to include Kafka tests -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <!-- Specify the naming pattern for the Kafka test classes -->
+            <excludes>
+              <exclude>**/KafkaIntegrationTest.java</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+    <!-- Profile configuration -->
+  </profile>
+  
+  <!-- Kafka Testing Profile -->
+  <profile>
+    <id>kafka-testing</id>
+    <build>
+      <plugins>
+        <plugin>
+          <!-- Configure the Maven Surefire Plugin to include Kafka tests -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <!-- Specify the naming pattern for the Kafka test classes -->
+            <includes>
+              <include>**/KafkaIntegrationTest.java</include>
+            </includes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+  </profile>
 
+  <!-- Other profiles -->
+</profiles>
 </project>
