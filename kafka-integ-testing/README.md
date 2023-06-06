@@ -50,6 +50,10 @@ docker-compose -f kafka-zookeeper-docker-compose.yml up -d
 
 This will start the Kafka and ZooKeeper containers.
 
+4. consume data - `kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic customers [--from-beginning]`
+
+5. produce data - `kafka-console-producer.bat --bootstrap-server localhost:9092 --topic customers [--from-beginning]`
+
 ## Usage
 
 Explain how to use your project or provide examples of how to run and test it. For JUnit testing, follow these steps:
