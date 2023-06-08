@@ -67,7 +67,7 @@ public class ProducerApplication {
 			@Override
 			public Customer read() {
 
-				if (id.incrementAndGet() < 10_1000)
+				if (id.incrementAndGet() < 1_000)
 					return new Customer(id.get(), Math.random() > .5 ? "Jane" : "Jose");
 
 				return null;
